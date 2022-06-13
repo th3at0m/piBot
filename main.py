@@ -87,3 +87,8 @@ try:
 except KeyboardInterrupt:
     print("Shutting down bot...")
     exit()
+except ModuleNotFoundError:
+    print("Installing necessary libraries...")
+    os.system("pip3 install discord-py-interactions")
+    print("You're good to go! Rerun this file, please.")
+    exit()
