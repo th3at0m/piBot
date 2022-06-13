@@ -63,7 +63,7 @@ async def shutdown(ctx: interactions.CommandContext):
 async def button_response(ctx):
     if ctx.user.id == UID:
         await ctx.edit("⌛ Rebooting...", components=None)
-        os.system("reboot")
+        os.system("sudo reboot")
     else:
         pass
 
@@ -71,7 +71,7 @@ async def button_response(ctx):
 async def button_response(ctx):
     if ctx.user.id == UID:
         await ctx.edit("⌛ Halting the Pi...", components=None)
-        os.system("halt")
+        os.system("sudo halt")
     else:
         pass
 
