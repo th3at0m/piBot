@@ -82,13 +82,21 @@ async def button_response(ctx):
     else:
         pass
 
+@bot.command(
+    name="eval",
+    description="Runs a command on the Pi",
+    options = [
+        interactions.Option(
+            name="command",
+            description="Command to run",
+            type=interactions.OptionType.STRING,
+            required=True,
+        ),
+    ],
+)
+
 try:
     bot.start()
 except KeyboardInterrupt:
     print("Shutting down bot...")
-    exit()
-except ModuleNotFoundError:
-    print("Installing necessary libraries...")
-    os.system("pip3 install discord-py-interactions")
-    print("You're good to go! Rerun this file, please.")
     exit()
