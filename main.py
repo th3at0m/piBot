@@ -4,7 +4,16 @@
 
 # Load Modules
 import interactions, subprocess, os
+import random
+import string
 from dotenv import load_dotenv
+import time
+
+def create_random_string(leng=20):
+    ret = ""
+    for i in range(leng):
+        ret += random.choice(string.ascii_lowercase)
+    return ret
 
 # Initialize Bot and .env file
 load_dotenv()
@@ -94,6 +103,23 @@ async def button_response(ctx):
         ),
     ],
 )
+
+async def eval(ctx: interactions.CommandContext, command: str):
+    if ctx.user.id == UID:
+        try:
+            filename = "./tmp/eval.log"
+            out = open(filename, "w")
+            subprocess.run(command.split(), stdout=out, stderr=out)
+            out.close()
+            voap = open(filename)
+            data = voap.read()
+            print(data)
+            await ctx.send("```" + data + "```", ephemeral=False)
+        except FileNotFoundError as err:
+            await ctx.send("❌ Command or file not found.", ephemeral=False)
+            print(err)
+    else:
+        pass
 
 try:
     bot.start()

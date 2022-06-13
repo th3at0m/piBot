@@ -21,3 +21,6 @@ A functional Discord bot for your Raspberry Pi.
 
 
 ```/shutdown``` ---> Reboots or halts your Pi
+
+
+```/eval``` ---> Runs a command on your Pi
