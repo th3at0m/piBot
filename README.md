@@ -24,3 +24,8 @@ A functional Discord bot for your Raspberry Pi.
 
 
 ```/eval``` ---> Runs a command on your Pi
+
+# License & Credits
+piBot is protected by AGPL v3 license.
+
+piBot uses [interactions.py](https://discord-py-slash-command.readthedocs.io)
