@@ -17,6 +17,8 @@ print("√ Booting up bot...")
 load_dotenv(os.path.join(BASEDIR, '../.env'))
 UID = os.getenv("UID")
 TOKEN = os.getenv("TOKEN")
+VER = os.getenv("VER")
+print("Running on piBot v" + VER)
 bot = interactions.Client(token=TOKEN)
 
 # buttons and rows
