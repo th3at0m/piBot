@@ -9,11 +9,7 @@ import string
 from dotenv import load_dotenv
 import time
 
-def create_random_string(leng=20):
-    ret = ""
-    for i in range(leng):
-        ret += random.choice(string.ascii_lowercase)
-    return ret
+print("√ Booting up bot...")
 
 # Initialize Bot and .env file
 load_dotenv()
