@@ -9,10 +9,12 @@ import string
 from dotenv import load_dotenv
 import time
 
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+
 print("√ Booting up bot...")
 
 # Initialize Bot and .env file
-load_dotenv()
+load_dotenv(os.path.join(BASEDIR, '../.env'))
 UID = os.getenv("UID")
 TOKEN = os.getenv("TOKEN")
 bot = interactions.Client(token=TOKEN)
