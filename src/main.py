@@ -111,7 +111,6 @@ async def eval(ctx: interactions.CommandContext, command: str):
             out.close()
             voap = open(filename)
             data = voap.read()
-            print(data)
             await ctx.send("```" + data + "```", ephemeral=False)
         except FileNotFoundError as err:
             await ctx.send("❌ Command or file not found.", ephemeral=False)
